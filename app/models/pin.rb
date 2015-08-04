@@ -18,6 +18,4 @@ class Pin
   def heart
   end
   
-  
-  
 end
