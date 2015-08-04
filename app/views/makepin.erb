@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pinterest</title>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="header">
+    <header>
+      <p id="ver">Pinterest</p>
+    </header>
+    </div>
+      <div id="form">
+      <h4>Make A Pin</h4>
+      <form method="Post" action="/makepin">
+        <div class="form-group">
+          <label for="user">Username</label>
+          <input type="text" class="form-control" placeholder="user" name="user" id="user">
+        </div>
+<!--         <div class="form-group">
+          <label for="image">Image</label>
+          <input type="text" class="form-control" placeholder="image" name="image" id="image">
+        </div> -->
+         <div class="form-group">
+            <label for="image">File input</label>
+            <input type="file" id="image">
+         </div>
+        <div class="form-group">
+          <label for="link">Link</label>
+          <input type="text" class="form-control" placeholder="link" name="link" id="link">
+        </div>
+        <div class="form-group">
+           <label for="description">Description</label>
+            <textarea class="form-control" type="text" placeholder="description" name="description" id="description" rows="4"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="category">Category</label>
+          <select name="category" id="category">
+          <optgroup label="Categories">
+          <option value="other">Other</option>
+          <option value="food">Food</option>
+          <option value="cars">Cars</option>
+          <option value="sports">Sports</option>
+          <option value="news">News</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-default but">Submit</button>
+      </form>
+      </div>
+  </body>
+</html>

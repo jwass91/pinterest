@@ -9,7 +9,11 @@ class ApplicationController < Sinatra::Base
   end
   
   get '/' do
-
+    erb :index
+  end
+  
+  get '/post' do 
+    erb :makepin
   end
   
   post '/makepin' do
@@ -20,7 +24,7 @@ class ApplicationController < Sinatra::Base
     @description = params[:description]
     @category = params[:category]
     
-    erb :makepin
+    erb :index
     
   end
  
