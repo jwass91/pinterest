@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Pinterest</title>
+		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	    <link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<header>
+			<h1>Pinterest</h1>
+		</header>
+			<h4>Make A Pin</h4>
+			<div>
+			<form method="Post" action="/makepin" class="form-horizontal">
+				<label for="user" class="col-sm-2 control-label">Username</label>
+				<input class="form-control" type="text" placeholder="user" name="user" id="user">
+				<label for="image" class="col-sm-2 control-label">Image</label>
+				<input class="form-control" type="text" placeholder="image" name="image" id="image">
+				<label for="link" class="col-sm-2 control-label">Link</label>
+				<input class="form-control" type="text" placeholder="link" name="link" id="link">
+				<label for="description" class="col-sm-2 control-label">Description</label>
+				<input class="form-control" type="text" placeholder="description" name="description" id="description">
+				<textarea for="category" rows="3" class="col-sm-2 control-label">Category</textarea>
+				<select name="category" id="category">
+				  <optgroup label="Categories">
+				  <option value="food">Food</option>
+				  <option value="cars">Cars</option>
+				  <option value="sports">Sports</option>
+				  <option value="news">News</option>
+				</select>
+
+			</form>
+			</div>
+	</body>
+</html>
