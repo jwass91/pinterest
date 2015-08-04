@@ -18,7 +18,8 @@ class ApplicationController < Sinatra::Base
   
   post '/makepin' do
     
-    pin = Pin.new(params[:user], params[:image], params[:link], params[:description], params[:category])
+    @pin = Pin.new(params[:user], params[:image], params[:link], params[:description], params[:category])
+    @pins = Pin.all
     erb :index
     
   end
