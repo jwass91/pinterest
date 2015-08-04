@@ -9,6 +9,15 @@ class Pin
     @category = category
   end
   
+  def pin
+  end
+  
+  def send
+  end
+  
+  def heart
+  end
+  
   
   
 end

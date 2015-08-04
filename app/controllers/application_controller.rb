@@ -11,5 +11,17 @@ class ApplicationController < Sinatra::Base
   get '/' do
 
   end
+  
+  post '/makepin' do
+    
+    @user = params[:user]
+    @image = params[:image]
+    @link = params[:link]
+    @description = params[:description]
+    @category = params[:category]
+    
+    erb :makepin
+    
+  end
  
 end
