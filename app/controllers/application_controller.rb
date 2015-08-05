@@ -19,9 +19,9 @@ class ApplicationController < Sinatra::Base
   
   post '/makepin' do
     
-    @pin = Pin.new(:user => params[:user],:image =>  params[:image],:link =>  params[:link],:description =>  params[:description],:category =>  params[:category])
-    @pins = Pin.all
-
+    @pin = Pin.new(:user => params[:user],:image => params[:image],:link => params[:link],:description =>  params[:description],:category => params[:category])
+#     @pins = Pin.all
+    @pin.save
     redirect '/'
 #     erb :index
 

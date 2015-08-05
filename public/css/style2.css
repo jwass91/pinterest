@@ -24,9 +24,10 @@ body{
    background: white;
   border: 1px solid lightgray;
   border-radius: 5px;
-  float: left;
+/*   float: left; */
   margin: 15px 10px;
   width: 225px;
+  display: inline-block;
 /*   padding: 10px; */
 }
 .lightgray{
