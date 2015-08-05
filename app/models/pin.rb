@@ -22,6 +22,6 @@ class Pin
   end
   
   def self.all
-    print ALL_PINS
+    return ALL_PINS
   end
 end
