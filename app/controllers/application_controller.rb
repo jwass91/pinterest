@@ -9,6 +9,7 @@ class ApplicationController < Sinatra::Base
   end
   
   get '/' do
+    @pins = Pin.all
     erb :index
   end
   
@@ -18,9 +19,10 @@ class ApplicationController < Sinatra::Base
   
   post '/makepin' do
     
-    @pin = Pin.new(params[:user], params[:image], params[:link], params[:description], params[:category])
+    @pin = Pin.new(:user => params[:user],:image =>  params[:image],:link =>  params[:link],:description =>  params[:description],:category =>  params[:category])
     @pins = Pin.all
-    erb :index
+    redirect '/'
+#     erb :index
     
   end
  
