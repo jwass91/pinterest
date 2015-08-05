@@ -18,7 +18,10 @@ body{
 #but{
   float: left;
   margin-left: 5px;
-  margin-top: 13.8205px;
+  margin-top: 30px;
+/*   position: relative;
+  top: 50%;
+  transform: translateY(-50%); */
 }
 .pin{
    background: white;
@@ -39,7 +42,7 @@ body{
   padding: 10px;
 }
 #image{
-  padding: 10px;
+  
 }
 .darkgray{
   color: darkgray;
@@ -63,4 +66,8 @@ body{
 }
 .test{
   margin-left: 3px;
+}
+img{
+/*   width: 100vmax; */
+  width="223.5"
 }

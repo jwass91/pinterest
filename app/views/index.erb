@@ -13,13 +13,13 @@
     <% @pins.each do |pin| %>
     <div class="pin">
       <div id="username"  class="glyphicon glyphicon-user" aria-hidden="true"><span class="test"><%= pin.user %></span></div>
-<!--       <div id="image"><%#= pin.image %>
-         <div><a><% #pin.link %></a></div>
-      </div> -->
-      <div id="image">
+      <div id="image"><img src="<%= pin.image %>" width="223.5">
+         <div><a><% pin.link %></a></div>
+      </div>
+<!--       <div id="image">
        <img src="<% pin.image %>" width="213">
       </div>
-        
+         -->
      
       <div id="content"><%= pin.description %></div>
       
