@@ -21,7 +21,9 @@ class Pin < ActiveRecord::Base
 #   def heart
 #   end
   
+
 #   def self.all
 #     return ALL_PINS
 #   end
+
 end

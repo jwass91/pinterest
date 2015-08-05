@@ -20,20 +20,46 @@ body{
   margin-left: 5px;
   margin-top: 13.8205px;
 }
-.tweet{
+.pin{
    background: white;
   border: 1px solid lightgray;
   border-radius: 5px;
-  margin: 15px auto;
-  width: 400px;
+  float: left;
+  margin: 15px 10px;
+  width: 225px;
+/*   padding: 10px; */
+}
+.lightgray{
+  color: lightgray;
+  margin-bottom: 0;
+}
+#cat{
+  border-top: 1px solid lightgray;
   padding: 10px;
 }
-.tweet:hover{
+#image{
+  padding: 10px;
+}
+.darkgray{
+  color: darkgray;
+}
+#content{
+  border-top: 1px solid lightgray;
+  padding: 10px;
+}
+.pin:hover{
   background: #F5F5F5;
 }
 #username{
   font-weight: bold;
+  border-bottom: 1px solid lightgray;
+  padding: 10px;
+  width: 225px;
 }
 #content{
   margin-top: 7px;
+  word-wrap: break-word;
+}
+.test{
+  margin-left: 3px;
 }

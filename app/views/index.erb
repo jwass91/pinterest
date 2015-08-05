@@ -8,10 +8,20 @@
   <body>
     <div class="header">
     <a class="btn btn-default" id="but" href="/post" role="button">Make Pin</a>
-    <p class="lead" id="hi"> Hello Fwitter </p>
+    <p class="lead" id="hi"> Pinterest </p>    
     </div>
-
-    
-    
+    <% @pins.each do |pin| %>
+    <div class="pin">
+      <div id="username"  class="glyphicon glyphicon-user" aria-hidden="true"><span class="test"><%= pin.user %></span></div>
+      <div id="image"><%= pin.image %>
+         <div><a><%= pin.link %></a></div>
+      </div>
+     
+      <div id="content"><%= pin.description %></div>
+      
+      <div id="cat"><p class="lightgray">Found In</p><span class="darkgray"><%= pin.category %></span></div>
+    </div>
+    <% end %>
+    </div>
   </body>
 </html>

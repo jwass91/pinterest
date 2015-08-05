@@ -21,8 +21,10 @@ class ApplicationController < Sinatra::Base
     
     @pin = Pin.new(:user => params[:user],:image =>  params[:image],:link =>  params[:link],:description =>  params[:description],:category =>  params[:category])
     @pins = Pin.all
+
     redirect '/'
 #     erb :index
+
     
   end
  
