@@ -16,13 +16,18 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
   
-  get '/post' do 
-    erb :makepin
+  get '/post' do
+    if session[:user_id] == nil
+      redirect '/'
+    else
+      erb :makepin
+    end
+    
   end
   
   post '/makepin' do
-    @user = User.find_by(:username => params[:user])
-    @pin = Pin.new(:user_id => @user.id,:image => params[:image],:link => params[:link],:description =>  params[:description],:category => params[:category])
+#     @user = User.find_by(:username => params[:user])
+    @pin = Pin.new(:user_id => session[:user_id],:image => params[:image],:link => params[:link],:description =>  params[:description],:category => params[:category])
 #     @pins = Pin.all
     @pin.save
     redirect '/'
