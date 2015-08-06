@@ -1,4 +1,6 @@
 class Pin < ActiveRecord::Base
+  belongs_to :user
+  
 #   attr_reader :user, :image, :link, :description, :category
   
 #   ALL_PINS = []

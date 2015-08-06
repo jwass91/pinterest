@@ -1,5 +1,6 @@
 require "./config/environment"
 require "./app/models/pin"
+require "./app/models/user"
 
 class ApplicationController < Sinatra::Base
   
@@ -18,14 +19,12 @@ class ApplicationController < Sinatra::Base
   end
   
   post '/makepin' do
-    
-    @pin = Pin.new(:user => params[:user],:image => params[:image],:link => params[:link],:description =>  params[:description],:category => params[:category])
+    @user = User.find_by(:usernmae => params[:user])
+    @pin = Pin.new(:user_id => @user.id,:image => params[:image],:link => params[:link],:description =>  params[:description],:category => params[:category])
 #     @pins = Pin.all
     @pin.save
     redirect '/'
-#     erb :index
-
-    
+#     erb :index 
   end
  
 end

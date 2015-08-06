@@ -67,7 +67,7 @@ body{
 .test{
   margin-left: 3px;
 }
-img{
-/*   width: 100vmax; */
-  width="223.5"
+#make{
+  position: absolute;
+  left: 0;
 }

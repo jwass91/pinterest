@@ -7,17 +7,23 @@
   </head>
   <body>
     <div class="header">
-    <a class="btn btn-default" id="but" href="/post" role="button">Make Pin</a>
+<!--       <a href="/post"><div><a class="btn btn-default" id="but" role="button">Make Pin</a> </div></a> -->
+    <div id="make" ><a href="/post"><button type="button" id="myButton" data-loading-text="Loading..."  class="btn btn-primary" autocomplete="off" href='/post'>
+  Make Pin
+      </button></a></div>
     <p class="lead" id="hi"> Pinterest </p>    
     </div>
     <% @pins.each do |pin| %>
     <div class="pin">
-      <div id="username"  class="glyphicon glyphicon-user" aria-hidden="true"><span class="test"><%= pin.user %></span></div>
-      <div id="image"><img src="<%= pin.image %>" width="223.5">
-         <div><a><% pin.link %></a></div>
+      <div id="username"  class="glyphicon glyphicon-user" aria-hidden="true"><span class="test"><%= pin.user.usernmae %></span></div>
+      
+      <a href="https://<%= pin.link %>">
+      <div id="image"><img src="<%= pin.image %>" width="222.5">
+         
       </div>
+      </a>
 <!--       <div id="image">
-       <img src="<% pin.image %>" width="213">
+       <img src="<% #pin.image %>" width="213">
       </div>
          -->
      
@@ -28,4 +34,11 @@
     <% end %>
     </div>
   </body>
+<script>
+  $('#myButton').on('click', function () {
+    var $btn = $(this).button('loading')
+    // business logic...
+    $btn.button('reset')
+  })
+</script>
 </html>
