@@ -9,6 +9,11 @@ body{
   
   
 }
+#logout{
+  position: absolute;
+  right: 0;
+  top: 0;
+}
 #hi{
   font-size: 25px;
   position: relative;
@@ -71,3 +76,164 @@ body{
   position: absolute;
   left: 0;
 }
+button {
+  background: none;
+  border: 1px solid $color-a;
+  border-radius: 0;
+  color: $color-a;
+  font-size: 18px;
+  line-height: 30px;
+  margin: 20px;
+  overflow: hidden;
+  padding: 0 30px;
+  position: relative;
+  text-transform: uppercase;
+  width: 115px;
+}
+/* * {
+  &, &:before, &:after, &:focus, &:active, &:focus:active {
+    box-sizing: border-box;
+  }
+}
+
+$color-a: #222;
+$color-b: deeppink;
+
+body {
+  margin: 20px;
+}
+button {
+  background: none;
+  border: 1px solid $color-a;
+  border-radius: 0;
+  color: $color-a;
+  font-size: 18px;
+  line-height: 30px;
+  margin: 20px;
+  overflow: hidden;
+  padding: 0 30px;
+  position: relative;
+  text-transform: uppercase;
+  width: 200px;
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    transition: all .6s ease-in .15s;
+    z-index: -1;
+  }
+  &.horizontal {
+    &:before,
+    &:after {
+      background: $color-b;
+      box-shadow: 0 10px 0 0 $color-b, 0 20px 0 0 $color-b;
+      height: 5px;
+      left: -150%;
+      top: 0;
+      transform: skewX(-40deg);
+      width: 130%;
+    }
+    &:after {
+      left: 115%;
+      top: 5px;
+    }
+    &:hover {
+      &:before {
+        left: -15%;
+      }
+      &:after {
+        left: -15%;
+      }
+    }
+  }
+  &.vertical {
+    &:before,
+    &:after {
+      background: $color-b;
+      box-shadow:
+        10px 0 0 0 $color-b,
+        20px 0 0 0 $color-b,
+        30px 0 0 0 $color-b,
+        40px 0 0 0 $color-b,
+        50px 0 0 0 $color-b,
+        60px 0 0 0 $color-b,
+        70px 0 0 0 $color-b,
+        80px 0 0 0 $color-b,
+        90px 0 0 0 $color-b,
+        100px 0 0 0 $color-b,
+        110px 0 0 0 $color-b,
+        120px 0 0 0 $color-b,
+        130px 0 0 0 $color-b,
+        140px 0 0 0 $color-b,
+        150px 0 0 0 $color-b,
+        160px 0 0 0 $color-b,
+        170px 0 0 0 $color-b,
+        180px 0 0 0 $color-b,
+        190px 0 0 0 $color-b,
+        200px 0 0 0 $color-b
+      ;
+      left: 0;
+      height: 160%;
+      top: -160%;
+      transform: skewY(-5deg);
+      width: 5px;
+    }
+    &:after {
+      left: 5px;
+      top: 160%;
+    }
+    &:hover {
+      &:before {
+        top: -5%;
+      }
+      &:after {
+        top: -5%;
+      }
+    }
+  }
+  &.diagonal {
+    &:before,
+    &:after {
+      background: $color-b;
+      box-shadow:
+        10px 0 0 0 $color-b,
+        20px 0 0 0 $color-b,
+        30px 0 0 0 $color-b,
+        40px 0 0 0 $color-b,
+        50px 0 0 0 $color-b,
+        60px 0 0 0 $color-b,
+        70px 0 0 0 $color-b,
+        80px 0 0 0 $color-b,
+        90px 0 0 0 $color-b,
+        100px 0 0 0 $color-b,
+        110px 0 0 0 $color-b,
+        120px 0 0 0 $color-b,
+        130px 0 0 0 $color-b,
+        140px 0 0 0 $color-b,
+        150px 0 0 0 $color-b,
+        160px 0 0 0 $color-b,
+        170px 0 0 0 $color-b,
+        180px 0 0 0 $color-b,
+        190px 0 0 0 $color-b,
+        200px 0 0 0 $color-b
+      ;
+      left: 54px;
+      height: 180px;
+      top: -20px;
+      transform: rotate(-45deg) translateX(-50%) translateY(-100%);
+      width: 6px;
+    }
+    &:after {
+      left: 46px;
+      top: -20px;
+      transform: rotate(-45deg) translateX(-50%) translateY(100%);
+    }
+    &:hover {
+      &:before,
+      &:after {
+        transform: rotate(-45deg) translateX(-50%) translateY(0);
+      }
+    }
+  }
+} */
