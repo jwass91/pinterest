@@ -26,5 +26,15 @@ class ApplicationController < Sinatra::Base
     redirect '/'
 #     erb :index 
   end
+  
+  get '/signup' do
+    erb :signup
+  end
+  
+  post '/signup' do
+    @user = User.new(:username => params[:user], :fullname => params[:name], :email => params[:email])
+    @user.save
+    redirect '/'
+  end
  
 end
