@@ -19,7 +19,7 @@ class ApplicationController < Sinatra::Base
   end
   
   post '/makepin' do
-    @user = User.find_by(:usernmae => params[:user])
+    @user = User.find_by(:username => params[:user])
     @pin = Pin.new(:user_id => @user.id,:image => params[:image],:link => params[:link],:description =>  params[:description],:category => params[:category])
 #     @pins = Pin.all
     @pin.save

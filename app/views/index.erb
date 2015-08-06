@@ -15,7 +15,7 @@
     </div>
     <% @pins.each do |pin| %>
     <div class="pin">
-      <div id="username"  class="glyphicon glyphicon-user" aria-hidden="true"><span class="test"><%= pin.user.usernmae %></span></div>
+      <div id="username"  class="glyphicon glyphicon-user" aria-hidden="true"><span class="test"><%= pin.user.username %></span></div>
       
       <a href="https://<%= pin.link %>">
       <div id="image"><img src="<%= pin.image %>" width="222.5">
