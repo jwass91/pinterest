@@ -9,8 +9,11 @@
     <div class="header">
 <!--       <a href="/post"><div><a class="btn btn-default" id="but" role="button">Make Pin</a> </div></a> -->
     <div id="make" ><a href="/post"><button type="button" id="myButton" data-loading-text="Loading..."  class="btn btn-primary" autocomplete="off" href='/post'>
+      
   Make Pin
       </button></a></div>
+      <a href="/logout"><button>Logout</button></a>
+      <p><%=session[:user_id]%></p>
     <p class="lead" id="hi"> Pinterest </p>    
     </div>
     <% @pins.each do |pin| %>
