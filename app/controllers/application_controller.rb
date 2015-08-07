@@ -1,6 +1,7 @@
 require "./config/environment"
 require "./app/models/pin"
 require "./app/models/user"
+require "./app/models/email"
 
 class ApplicationController < Sinatra::Base
   
