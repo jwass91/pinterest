@@ -54,6 +54,7 @@ class ApplicationController < Sinatra::Base
     @user = User.new(:username => params[:user], :fullname => params[:name], :email => params[:email], :verified => @api_string)
     @user.password = params[:password]
     if @user.valid?
+      Email.send_simple_message(params[:email], params[:user], @api_string)
     @user.save
     session[:user_id] = @user.id
     redirect '/'
@@ -83,6 +84,7 @@ class ApplicationController < Sinatra::Base
         erb :login
     elsif @user.password == params[:password]
       session[:user_id] = @user.id
+      session[:verified] = @user.verified
       redirect '/'  
     end
   end
@@ -97,8 +99,13 @@ class ApplicationController < Sinatra::Base
   end
   #end of logout command
   
-  get '/verify/:code' do
+#---------------------------------------------------------------------------------
   
+  #verification command link
+  get '/verify/:code' do
+    @user = User.find_by(:verified => params[:code])
+    @user.verified=""
+    redirect '/'
   end
   
   
