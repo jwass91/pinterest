@@ -87,10 +87,13 @@ class ApplicationController < Sinatra::Base
   
   get '/:username' do
     @user = User.find_by(:username => params[:username])
-#     if User.
-    @pins = []
-    Pin.where(user_id: @user.id).find_each do |t|
-      @pins.push(t)
+    if @user == nil
+      redirect '/'
+    else
+      @pins = []
+      Pin.where(user_id: @user.id).find_each do |t|
+        @pins.push(t)
+      end
     end
     erb :user
   end
