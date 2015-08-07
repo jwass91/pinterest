@@ -11,6 +11,9 @@ class ApplicationController < Sinatra::Base
     set :session_secret, 'usernmae'
   end
   
+#---------------------------------------------------------------------------------
+  
+  #Homepage loading starts here
   get '/' do
     @pins = Pin.all
     erb :index
@@ -22,9 +25,12 @@ class ApplicationController < Sinatra::Base
     else
       erb :makepin
     end
-    
   end
+  #end of homepage methods
   
+#---------------------------------------------------------------------------------
+  
+  #Creation of pins page
   post '/makepin' do
 #     @user = User.find_by(:username => params[:user])
     @pin = Pin.new(:user_id => session[:user_id],:image => params[:image],:link => params[:link],:description =>  params[:description],:category => params[:category])
@@ -33,17 +39,25 @@ class ApplicationController < Sinatra::Base
     redirect '/'
 #     erb :index 
   end
+  #end of pin creation
   
+#---------------------------------------------------------------------------------
+  
+  #Signup page
   get '/signup' do
     erb :signup
   end
   
   post '/signup' do
-    @user = User.new(:username => params[:user], :fullname => params[:name], :email => params[:email], :password => params[:password])
+    @user = User.new(:username => params[:user], :fullname => params[:name], :email => params[:email])
     @user.save
     redirect '/'
   end
- 
+  #end of signup page
+  
+#---------------------------------------------------------------------------------
+  
+  #Login page methods
   get '/login' do
     erb :login
   end
@@ -51,25 +65,23 @@ class ApplicationController < Sinatra::Base
   post '/login' do
     @user = User.find_by(:username => params[:user])
     
-    if @user == nil || @user.password != params[:password]
-      @error = true
-#       redirect '/login'
-      erb :login
-    elsif @user.password == params[:password]
+    if @user == nil
+      redirect '/login'
+    else
       session[:user_id] = @user.id
       redirect '/'
-#     else
-#       @error = true
-#       redirect '/login'
     end
   end
+  #end of login page
   
+#---------------------------------------------------------------------------------
   
+  #basic logout command
   get '/logout' do
     session.clear
-    redirect '/'
+    redirect '/login'
   end
-  
+  #end of logout command
   
   
 end
