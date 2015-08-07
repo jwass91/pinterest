@@ -6,7 +6,7 @@ def send_simple_message(email, username)
   :from => "Mailgun Sandbox <postmaster@sandbox8bc08204b98243e5be44eb95bcbdb14e.mailgun.org>",
   :to => email,
   :subject => "Hi #{username}, thanks for signing up. Verify your email for pintrest!",
-  :text => "Hi #{username}. Please click this link to verify your email"
+  :text => "Hi #{username}. Please click this link to verify your email: "
 end
   
   

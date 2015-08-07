@@ -49,9 +49,17 @@ class ApplicationController < Sinatra::Base
   end
   
   post '/signup' do
+    @error2 = ""
     @user = User.new(:username => params[:user], :fullname => params[:name], :email => params[:email])
+    @user.password = params[:password]
+    if @user.valid?
     @user.save
+    session[:user_id] = @user.id
     redirect '/'
+    else
+      @error2 = "Username and/or email is taken. Please try another one."
+      erb :signup
+    end
   end
   #end of signup page
   
@@ -63,13 +71,18 @@ class ApplicationController < Sinatra::Base
   end
   
   post '/login' do
+     @error = ""
     @user = User.find_by(:username => params[:user])
     
-    if @user == nil
-      redirect '/login'
-    else
+    if params[:user] == "" || params[:password] == ""
+      @error = "Please fill out all the fields"
+        erb :login
+    elsif @user == nil || @user.password != params[:password]
+      @error = "Incorrect password or username"
+        erb :login
+    elsif @user.password == params[:password]
       session[:user_id] = @user.id
-      redirect '/'
+      redirect '/'  
     end
   end
   #end of login page
