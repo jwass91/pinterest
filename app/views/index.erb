@@ -21,7 +21,8 @@
       Logout
       </button></a></div>
       <% end %>
-      <% if session[:user_id] == nil || session[:verified] != ""%>
+<!--        || session[:verified] != "" -->
+      <% if session[:user_id] == nil%>
         <div id="logout" ><a href="/login"><button type="button" id="myButton" data-loading-text="Loading..."  class="btn btn-primary" autocomplete="off" href='/login'>
       
       Login

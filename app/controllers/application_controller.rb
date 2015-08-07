@@ -104,8 +104,12 @@ class ApplicationController < Sinatra::Base
   
   #verification command link
   get '/verify/:code' do
+    puts params[:code]
     @user = User.find_by(:verified => params[:code])
+#     puts @user
+#     puts params[:code]
     @user.verified=""
+    @user.save
     redirect '/'
   end
   
