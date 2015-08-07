@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150807152522) do
+ActiveRecord::Schema.define(version: 20150807180319) do
 
   create_table "pins", force: :cascade do |t|
     t.string  "image"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20150807152522) do
     t.string "fullname"
     t.string "username"
     t.string "password_hash"
+    t.string "verified"
   end
 
 end
