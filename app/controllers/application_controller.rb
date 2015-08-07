@@ -39,7 +39,7 @@ class ApplicationController < Sinatra::Base
   end
   
   post '/signup' do
-    @user = User.new(:username => params[:user], :fullname => params[:name], :email => params[:email])
+    @user = User.new(:username => params[:user], :fullname => params[:name], :email => params[:email], :password => params[:password])
     @user.save
     redirect '/'
   end
@@ -51,18 +51,23 @@ class ApplicationController < Sinatra::Base
   post '/login' do
     @user = User.find_by(:username => params[:user])
     
-    if @user == nil
-      redirect '/login'
-    else
+    if @user == nil || @user.password != params[:password]
+      @error = true
+#       redirect '/login'
+      erb :login
+    elsif @user.password == params[:password]
       session[:user_id] = @user.id
       redirect '/'
+#     else
+#       @error = true
+#       redirect '/login'
     end
   end
   
   
   get '/logout' do
     session.clear
-    redirect '/login'
+    redirect '/'
   end
   
   
