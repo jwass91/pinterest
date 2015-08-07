@@ -39,7 +39,11 @@
     <div class="pin">
       <div id="username"  class="glyphicon glyphicon-user" aria-hidden="true"><span class="test"><%= pin.user.username %></span></div>
       
-      <a href="https://<%= pin.link %>">
+      <% if pin.link.include?("http") == true%>
+        <a href="<%= pin.link %>">
+        <%else%>
+        <a href="https://<%= pin.link %>">
+        <%end%>
       <div id="image"><img src="<%= pin.image %>" width="222.5">
          
       </div>
