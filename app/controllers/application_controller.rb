@@ -50,7 +50,8 @@ class ApplicationController < Sinatra::Base
   
   post '/signup' do
     @error2 = ""
-    @user = User.new(:username => params[:user], :fullname => params[:name], :email => params[:email])
+    @api_string = (0...32).map{65.+(rand(25)).chr}.join
+    @user = User.new(:username => params[:user], :fullname => params[:name], :email => params[:email], :verified => @api_string)
     @user.password = params[:password]
     if @user.valid?
     @user.save
@@ -95,6 +96,11 @@ class ApplicationController < Sinatra::Base
     redirect '/login'
   end
   #end of logout command
+  
+  get '/verify/:code' do
+  
+  end
+  
   
 #---------------------------------------------------------------------------------
   
